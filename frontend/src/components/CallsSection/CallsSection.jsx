@@ -9,12 +9,12 @@ export const CallsSection = ({ callsBtns, addRecord, callsRecords }) => {
       <CallsWrapper>
         {callsBtns.map(callBtn => {
           const currentActionTotal = callsRecords.filter(
-            record => record.name === callBtn.name
+            record => record.category.name === callBtn.name
           ).length;
 
           return (
             <AddCountBtn
-              key={callBtn.id}
+              key={callBtn._id}
               info={callBtn}
               addRecord={addRecord}
               currentActionTotal={currentActionTotal}

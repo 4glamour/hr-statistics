@@ -13,7 +13,6 @@ export const AddCategoryForm = ({ addCategory }) => {
       type,
       name,
       phone,
-      id: Date.now(),
     };
 
     addCategory(category);

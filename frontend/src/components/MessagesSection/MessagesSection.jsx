@@ -9,12 +9,12 @@ export const MessagesSection = ({ messagesBtns, addRecord, messagesRecords }) =>
       <CallsWrapper>
         {messagesBtns.map(msgBtn => {
           const currentActionTotal = messagesRecords.filter(
-            record => record.name === msgBtn.name
+            record => record.category.name === msgBtn.name
           ).length;
 
           return (
             <AddCountBtn
-              key={msgBtn.id}
+              key={msgBtn._id}
               info={msgBtn}
               addRecord={addRecord}
               currentActionTotal={currentActionTotal}

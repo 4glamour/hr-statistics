@@ -2,15 +2,10 @@ import { CountBtn, Total } from './AddCountBtn.styled';
 
 export const AddCountBtn = ({ info, addRecord, currentActionTotal }) => {
   const handleAddRecord = () => {
-    const { type, name } = info;
+    const { _id } = info;
     const callInfo = {
-      type,
-      name,
-      date: Date.now(),
-      owner: null,
+      category: _id,
     };
-
-    console.log(callInfo);
 
     addRecord(callInfo);
   };

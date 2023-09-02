@@ -8,11 +8,11 @@ export const RecordsSection = ({ actionRecords }) => {
     <Section title="Timeline">
       <RecordList>
         {records.map(record => {
-          const date = new Date(record.date);
+          const date = new Date(record.createdAt);
           return (
-            <RecordItem key={record.date}>
-              <span>{record.type}</span>
-              <span>{record.name}</span>
+            <RecordItem key={record._id}>
+              <span>{record.category.type}</span>
+              <span>{record.category.name}</span>
               <span>{date.toLocaleString()}</span>
             </RecordItem>
           );
