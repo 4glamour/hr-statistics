@@ -18,41 +18,57 @@ function App() {
 
   useEffect(() => {
     (async () => {
-      const categories = await getCategories();
-      setCategories(categories.data.result);
+      try {
+        const categories = await getCategories();
+        setCategories(categories.data.result);
 
-      const records = await getRecords();
-      setActionRecords(records.data.result);
+        const records = await getRecords();
+        setActionRecords(records.data.result);
+      } catch (error) {
+        console.log(error);
+      }
     })();
   }, []);
 
   const addCategory = async data => {
-    const res = await addCategoryToDb(data);
+    try {
+      const res = await addCategoryToDb(data);
 
-    setCategories(categories => {
-      return [...categories, res.data.result];
-    });
+      setCategories(categories => {
+        return [...categories, res.data.result];
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const callsBtns = categories.filter(category => category.type === 'calls');
   const messagesBtns = categories.filter(category => category.type === 'messages');
 
   const addRecord = async data => {
-    const res = await addRecordToDb(data);
+    try {
+      const res = await addRecordToDb(data);
 
-    setActionRecords(record => {
-      return [...record, res.data.result];
-    });
+      setActionRecords(record => {
+        return [...record, res.data.result];
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const callsRecords = actionRecords.filter(record => record.category.type === 'calls');
   const messagesRecords = actionRecords.filter(record => record.category.type === 'messages');
 
   const deleteRecord = async id => {
-    await deleteRecordFromDb(id);
-    setActionRecords(records => {
-      return records.filter(record => record._id !== id);
-    });
+    try {
+      await deleteRecordFromDb(id);
+      setActionRecords(records => {
+        return records.filter(record => record._id !== id);
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const updateBtnActiveStatus = (id, status) => {

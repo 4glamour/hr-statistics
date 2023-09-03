@@ -18,7 +18,6 @@ export const CountNumber = styled.span`
 `;
 
 export const CallsWrapper = styled.div`
-  /* max-width: 1000px; */
   padding-right: 100px;
   display: flex;
   gap: 20px;

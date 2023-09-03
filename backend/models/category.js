@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+const handleSchemaValidationErrors = require('../helpers/handleSchemaValidationErrors');
 
 const categorySchema = new Schema(
   {
@@ -21,6 +22,8 @@ const categorySchema = new Schema(
   },
   { versionKey: false, timestamps: true }
 );
+
+categorySchema.post('save', handleSchemaValidationErrors);
 
 const Category = model('category', categorySchema);
 
