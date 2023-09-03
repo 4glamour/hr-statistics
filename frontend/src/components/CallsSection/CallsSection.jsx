@@ -1,13 +1,41 @@
+import { useState } from 'react';
 import { AddCountBtn } from '../AddCountBtn/AddCountBtn';
 import { Section } from '../Section/Section';
-import { CallsWrapper, TotalCount } from './CallsSection.styled';
+import { CallsWrapper, CountNumber, TotalCount, Wrapper } from './CallsSection.styled';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
 
-export const CallsSection = ({ callsBtns, addRecord, callsRecords }) => {
+export const CallsSection = ({ callsBtns, addRecord, callsRecords, updateBtnActiveStatus }) => {
+  const [filter, setFilter] = useState('active');
+
+  const filteredBtns = callsBtns.filter(btn => (filter === 'active' ? btn.active : !btn.active));
+
   return (
     <Section>
-      <TotalCount>звонки всего: {callsRecords.length}</TotalCount>
+      <Wrapper>
+        <TotalCount>
+          Звонки всего: <CountNumber>{callsRecords.length}</CountNumber>
+        </TotalCount>
+
+        <FormControl sx={{ minWidth: 100 }} size="small">
+          <InputLabel id="category-type">Type</InputLabel>
+          <Select
+            labelId="category-type"
+            id="category-type"
+            value={filter}
+            label="Type"
+            onChange={e => setFilter(e.target.value)}
+          >
+            <MenuItem value="active">Active</MenuItem>
+            <MenuItem value="hidden">Hidden</MenuItem>
+          </Select>
+        </FormControl>
+      </Wrapper>
+
       <CallsWrapper>
-        {callsBtns.map(callBtn => {
+        {filteredBtns.map(callBtn => {
           const currentActionTotal = callsRecords.filter(
             record => record.category.name === callBtn.name
           ).length;
@@ -18,6 +46,8 @@ export const CallsSection = ({ callsBtns, addRecord, callsRecords }) => {
               info={callBtn}
               addRecord={addRecord}
               currentActionTotal={currentActionTotal}
+              filter={filter}
+              updateBtnActiveStatus={updateBtnActiveStatus}
             />
           );
         })}

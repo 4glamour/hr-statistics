@@ -12,7 +12,11 @@ const categorySchema = new Schema(
     },
     phone: {
       type: String,
-      required: true,
+      default: 'no phone number',
+    },
+    active: {
+      type: Boolean,
+      default: true,
     },
   },
   { versionKey: false, timestamps: true }

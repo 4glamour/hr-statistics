@@ -7,6 +7,7 @@ import { MessagesSection } from './components/MessagesSection/MessagesSection';
 import {
   getCategories,
   getRecords,
+  deleteRecord as deleteRecordFromDb,
   addRecord as addRecordToDb,
   addCategory as addCategoryToDb,
 } from './services/statistics-api';
@@ -47,16 +48,44 @@ function App() {
   const callsRecords = actionRecords.filter(record => record.category.type === 'calls');
   const messagesRecords = actionRecords.filter(record => record.category.type === 'messages');
 
+  const deleteRecord = async id => {
+    await deleteRecordFromDb(id);
+    setActionRecords(records => {
+      return records.filter(record => record._id !== id);
+    });
+  };
+
+  const updateBtnActiveStatus = (id, status) => {
+    setCategories(categories =>
+      categories.map(category => {
+        if (category._id === id) {
+          return {
+            ...category,
+            ...status,
+          };
+        }
+
+        return category;
+      })
+    );
+  };
+
   return (
     <Container>
       <AddCategoryForm addCategory={addCategory} />
-      <CallsSection callsBtns={callsBtns} addRecord={addRecord} callsRecords={callsRecords} />
+      <CallsSection
+        callsBtns={callsBtns}
+        addRecord={addRecord}
+        callsRecords={callsRecords}
+        updateBtnActiveStatus={updateBtnActiveStatus}
+      />
       <MessagesSection
         messagesBtns={messagesBtns}
         addRecord={addRecord}
         messagesRecords={messagesRecords}
+        updateBtnActiveStatus={updateBtnActiveStatus}
       />
-      <RecordsSection actionRecords={actionRecords} />
+      <RecordsSection actionRecords={actionRecords} deleteRecord={deleteRecord} />
     </Container>
   );
 }

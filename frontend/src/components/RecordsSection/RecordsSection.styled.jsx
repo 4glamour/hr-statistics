@@ -1,12 +1,6 @@
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 
-export const RecordList = styled.ul`
-  max-width: 768px;
-  margin: 0 auto;
-`;
-
-export const RecordItem = styled.li`
+export const RecordsWrapper = styled.ul`
   display: flex;
-  gap: 10px;
-  justify-content: space-evenly;
+  justify-content: center;
 `;
