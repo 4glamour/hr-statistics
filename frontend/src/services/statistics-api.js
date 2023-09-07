@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://hr-records.onrender.com';
+axios.defaults.baseURL = 'https://hr-statistics-ja95.onrender.com';
+// axios.defaults.baseURL = 'http://localhost:3000/';
 
 // categories
 export const getCategories = () => {
@@ -16,8 +17,8 @@ export const updateActiveCategory = (id, data) => {
 };
 
 // records
-export const getRecords = () => {
-  return axios.get('/api/records');
+export const getRecords = date => {
+  return axios.get(`/api/records${date ? `?date=${date}` : ''}`);
 };
 
 export const addRecord = data => {

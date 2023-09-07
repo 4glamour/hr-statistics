@@ -1,5 +1,5 @@
 import { Section } from '../Section/Section';
-import { RecordsWrapper } from './RecordsSection.styled';
+import { DateWrapper, RecordsWrapper } from './RecordsSection.styled';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -9,12 +9,35 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { useEffect, useState } from 'react';
+import { getRecords } from '../../services/statistics-api';
 
-export const RecordsSection = ({ actionRecords, deleteRecord }) => {
+export const RecordsSection = ({ actionRecords, deleteRecord, setActionRecords }) => {
+  const [date, setDate] = useState(() => new Date());
   const records = [...actionRecords].reverse();
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const records = await getRecords(date);
+        setActionRecords(records.data.result);
+      } catch (error) {
+        console.log(error);
+      }
+    })();
+  }, [date, setActionRecords]);
+
+  const onDateChange = newDate => {
+    setDate(newDate);
+  };
 
   return (
     <Section title="Timeline">
+      <DateWrapper>
+        <DatePicker value={date} onChange={onDateChange} />
+      </DateWrapper>
+
       <RecordsWrapper>
         <TableContainer component={Paper} sx={{ maxWidth: 650 }}>
           <Table aria-label="simple table">

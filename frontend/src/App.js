@@ -101,7 +101,11 @@ function App() {
         messagesRecords={messagesRecords}
         updateBtnActiveStatus={updateBtnActiveStatus}
       />
-      <RecordsSection actionRecords={actionRecords} deleteRecord={deleteRecord} />
+      <RecordsSection
+        actionRecords={actionRecords}
+        deleteRecord={deleteRecord}
+        setActionRecords={setActionRecords}
+      />
     </Container>
   );
 }
