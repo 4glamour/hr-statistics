@@ -13,10 +13,9 @@ jobs:
 
       - name: Install, lint, build 🔧
         run: |
-          cd frontend
-          npm install
-          npm run lint:js
-          npm run build
+          cd frontend npm install
+          cd frontend npm run lint:js
+          cd frontend npm run build
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.0
