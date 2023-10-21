@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/hr-statistics/static/css/main.3dc874eb.css",
-    "main.js": "/hr-statistics/static/js/main.9769e237.js",
-    "static/js/406.c6fd5c82.chunk.js": "/hr-statistics/static/js/406.c6fd5c82.chunk.js",
-    "static/js/284.25ac1347.chunk.js": "/hr-statistics/static/js/284.25ac1347.chunk.js",
-    "static/js/145.edd29059.chunk.js": "/hr-statistics/static/js/145.edd29059.chunk.js",
+    "main.js": "/hr-statistics/static/js/main.084ec2b7.js",
+    "static/js/760.a1023e34.chunk.js": "/hr-statistics/static/js/760.a1023e34.chunk.js",
+    "static/js/284.0d0543b8.chunk.js": "/hr-statistics/static/js/284.0d0543b8.chunk.js",
+    "static/js/145.0425bde0.chunk.js": "/hr-statistics/static/js/145.0425bde0.chunk.js",
     "static/media/roboto-latin-500-normal.woff2": "/hr-statistics/static/media/roboto-latin-500-normal.f25d774ecfe0996f8eb5.woff2",
     "static/media/roboto-latin-700-normal.woff2": "/hr-statistics/static/media/roboto-latin-700-normal.227c93190fe7f82de3f8.woff2",
     "static/media/roboto-latin-400-normal.woff2": "/hr-statistics/static/media/roboto-latin-400-normal.b009a76ad6afe4ebd301.woff2",
@@ -63,13 +63,13 @@
     "static/media/roboto-greek-ext-700-normal.woff": "/hr-statistics/static/media/roboto-greek-ext-700-normal.249853776d22a271b2b5.woff",
     "index.html": "/hr-statistics/index.html",
     "main.3dc874eb.css.map": "/hr-statistics/static/css/main.3dc874eb.css.map",
-    "main.9769e237.js.map": "/hr-statistics/static/js/main.9769e237.js.map",
-    "406.c6fd5c82.chunk.js.map": "/hr-statistics/static/js/406.c6fd5c82.chunk.js.map",
-    "284.25ac1347.chunk.js.map": "/hr-statistics/static/js/284.25ac1347.chunk.js.map",
-    "145.edd29059.chunk.js.map": "/hr-statistics/static/js/145.edd29059.chunk.js.map"
+    "main.084ec2b7.js.map": "/hr-statistics/static/js/main.084ec2b7.js.map",
+    "760.a1023e34.chunk.js.map": "/hr-statistics/static/js/760.a1023e34.chunk.js.map",
+    "284.0d0543b8.chunk.js.map": "/hr-statistics/static/js/284.0d0543b8.chunk.js.map",
+    "145.0425bde0.chunk.js.map": "/hr-statistics/static/js/145.0425bde0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3dc874eb.css",
-    "static/js/main.9769e237.js"
+    "static/js/main.084ec2b7.js"
   ]
 }
