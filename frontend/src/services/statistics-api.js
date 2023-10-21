@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-// axios.defaults.baseURL = 'https://hr-statistics-ja95.onrender.com';
-axios.defaults.baseURL = 'http://localhost:3030/';
+axios.defaults.baseURL = 'https://hr-statistics-ja95.onrender.com';
+// axios.defaults.baseURL = 'http://localhost:3030/';
 
 // categories
 export const getCategories = () => {
