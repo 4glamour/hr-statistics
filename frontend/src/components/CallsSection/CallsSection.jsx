@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { AddCountBtn } from '../AddCountBtn/AddCountBtn';
 import { Section } from '../Section/Section';
-import { CallsWrapper, CountNumber, TotalCount, Wrapper } from './CallsSection.styled';
+import { CallsWrapper, CountNumber, TotalCount, TypeWrapper, Wrapper } from './CallsSection.styled';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import InputLabel from '@mui/material/InputLabel';
@@ -19,19 +19,21 @@ export const CallsSection = ({ callsBtns, addRecord, callsRecords, updateBtnActi
           Звонки всего: <CountNumber>{callsRecords.length}</CountNumber>
         </TotalCount>
 
-        <FormControl sx={{ minWidth: 100 }} size="small">
-          <InputLabel id="category-type">Type</InputLabel>
-          <Select
-            labelId="category-type"
-            id="category-type"
-            value={filter}
-            label="Type"
-            onChange={e => setFilter(e.target.value)}
-          >
-            <MenuItem value="active">Active</MenuItem>
-            <MenuItem value="hidden">Hidden</MenuItem>
-          </Select>
-        </FormControl>
+        <TypeWrapper>
+          <FormControl sx={{ minWidth: 100 }} size="small">
+            <InputLabel id="category-type">Type</InputLabel>
+            <Select
+              labelId="category-type"
+              id="category-type"
+              value={filter}
+              label="Type"
+              onChange={e => setFilter(e.target.value)}
+            >
+              <MenuItem value="active">Active</MenuItem>
+              <MenuItem value="hidden">Hidden</MenuItem>
+            </Select>
+          </FormControl>
+        </TypeWrapper>
       </Wrapper>
 
       <CallsWrapper>

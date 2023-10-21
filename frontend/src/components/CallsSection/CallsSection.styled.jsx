@@ -4,11 +4,22 @@ export const Wrapper = styled.div`
   display: flex;
   gap: 10px;
   justify-content: space-between;
+  align-items: center;
+`;
+
+export const TypeWrapper = styled.div`
+  background-color: rgba(255, 248, 220, 0.7);
+  padding: 10px;
+  border-radius: 5px;
 `;
 
 export const TotalCount = styled.div`
   text-align: center;
   font-weight: 600;
+
+  background-color: rgba(255, 248, 220, 0.4);
+  padding: 5px;
+  border-radius: 5px;
 `;
 
 export const CountNumber = styled.span`

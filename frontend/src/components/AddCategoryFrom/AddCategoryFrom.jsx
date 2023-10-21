@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Section } from '../Section/Section';
-import { CategoryForm } from './AddCategoryFrom.styled';
+import { CategoryForm, FormWrapper } from './AddCategoryFrom.styled';
 import Button from '@mui/material/Button';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
@@ -30,43 +30,45 @@ export const AddCategoryForm = ({ addCategory }) => {
 
   return (
     <Section title="Добавление">
-      <CategoryForm>
-        <FormControl sx={{ minWidth: 150 }} size="small">
-          <InputLabel id="category-type">Type</InputLabel>
-          <Select
-            labelId="category-type"
-            id="category-type"
-            value={type}
-            label="Type"
-            onChange={e => setType(e.target.value)}
-          >
-            <MenuItem value="messages">Сообщения</MenuItem>
-            <MenuItem value="calls">Звонки</MenuItem>
-          </Select>
-        </FormControl>
-        <TextField
-          label="Название"
-          variant="outlined"
-          value={name}
-          onChange={e => {
-            setName(e.target.value);
-          }}
-          required
-          size="small"
-        />
-        <TextField
-          label="Номер телефона"
-          variant="outlined"
-          value={phone}
-          onChange={e => {
-            setPhone(e.target.value);
-          }}
-          size="small"
-        />
-        <Button variant="contained" size="small" onClick={handleSubmit}>
-          Добавить
-        </Button>
-      </CategoryForm>
+      <FormWrapper>
+        <CategoryForm>
+          <FormControl sx={{ minWidth: 150 }} size="small">
+            <InputLabel id="category-type">Type</InputLabel>
+            <Select
+              labelId="category-type"
+              id="category-type"
+              value={type}
+              label="Type"
+              onChange={e => setType(e.target.value)}
+            >
+              <MenuItem value="messages">Сообщения</MenuItem>
+              <MenuItem value="calls">Звонки</MenuItem>
+            </Select>
+          </FormControl>
+          <TextField
+            label="Название"
+            variant="outlined"
+            value={name}
+            onChange={e => {
+              setName(e.target.value);
+            }}
+            required
+            size="small"
+          />
+          <TextField
+            label="Номер телефона"
+            variant="outlined"
+            value={phone}
+            onChange={e => {
+              setPhone(e.target.value);
+            }}
+            size="small"
+          />
+          <Button variant="contained" size="small" onClick={handleSubmit}>
+            Добавить
+          </Button>
+        </CategoryForm>
+      </FormWrapper>
     </Section>
   );
 };

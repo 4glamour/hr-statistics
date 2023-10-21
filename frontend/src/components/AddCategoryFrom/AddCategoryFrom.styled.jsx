@@ -1,9 +1,20 @@
 import styled from '@emotion/styled';
 
+export const FormWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
 export const CategoryForm = styled.form`
+  width: max-content;
+
   display: flex;
   justify-content: center;
   gap: 10px;
+
+  background-color: rgba(255, 248, 220, 0.7);
+  padding: 10px;
+  border-radius: 5px;
 `;
 
 export const AddInput = styled.input`

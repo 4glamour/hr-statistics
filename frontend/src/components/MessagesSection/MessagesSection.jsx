@@ -4,6 +4,7 @@ import {
   CallsWrapper,
   CountNumber,
   TotalCount,
+  TypeWrapper,
   Wrapper,
 } from '../CallsSection/CallsSection.styled';
 import { Section } from '../Section/Section';
@@ -28,20 +29,21 @@ export const MessagesSection = ({
         <TotalCount>
           Cообщения всего: <CountNumber>{messagesRecords.length}</CountNumber>
         </TotalCount>
-
-        <FormControl sx={{ minWidth: 100 }} size="small">
-          <InputLabel id="category-type">Type</InputLabel>
-          <Select
-            labelId="category-type"
-            id="category-type"
-            value={filter}
-            label="Type"
-            onChange={e => setFilter(e.target.value)}
-          >
-            <MenuItem value="active">Active</MenuItem>
-            <MenuItem value="hidden">Hidden</MenuItem>
-          </Select>
-        </FormControl>
+        <TypeWrapper>
+          <FormControl sx={{ minWidth: 100 }} size="small">
+            <InputLabel id="category-type">Type</InputLabel>
+            <Select
+              labelId="category-type"
+              id="category-type"
+              value={filter}
+              label="Type"
+              onChange={e => setFilter(e.target.value)}
+            >
+              <MenuItem value="active">Active</MenuItem>
+              <MenuItem value="hidden">Hidden</MenuItem>
+            </Select>
+          </FormControl>
+        </TypeWrapper>
       </Wrapper>
 
       <CallsWrapper>

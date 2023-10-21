@@ -10,7 +10,7 @@ export const CountBtn = styled.button`
   -webkit-box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.75);
 
-  background-color: #ffebcd;
+  background-color: rgba(255, 248, 220, 0.7);
 
   transform: scale(1);
   transition: transform 100ms ease-out, background-color 100ms ease-out;
@@ -57,5 +57,5 @@ export const CounterWrapper = styled.div`
   flex-direction: column;
   align-items: center;
 
-  gap: 5px;
+  gap: 12px;
 `;

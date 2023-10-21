@@ -5,7 +5,7 @@ import {
   CounterLabel,
   CounterWrapper,
   HideBtnWrapper,
-  Number,
+  // Number,
 } from './AddCountBtn.styled';
 import Button from '@mui/material/Button';
 
@@ -47,7 +47,7 @@ export const AddCountBtn = ({
         <Counter>{currentActionTotal}</Counter>
         <CounterLabel>{info.name}</CounterLabel>
       </CountBtn>
-      <Number>{info.phone}</Number>
+      {/* <Number>{info.phone}</Number> */}
       <HideBtnWrapper>
         {filter === 'active' ? (
           <Button variant="outlined" onClick={hideBtn} size="small">
