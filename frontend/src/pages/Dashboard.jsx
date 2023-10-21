@@ -123,10 +123,6 @@ export default function Dashboard({ photo }) {
 
       setTimeout(wakeUp, MINUTES_14);
     })();
-
-    return () => {
-      console.log('тут надо будет очищать setTimeout');
-    };
   }, []);
 
   return (

@@ -10,6 +10,7 @@ import { getUserInfo, setAuthHeader } from './services/statistics-api';
 
 const Dashboard = lazy(() => import('./pages/Dashboard'));
 const LoginPage = lazy(() => import('./pages/Login'));
+const ScriptsPage = lazy(() => import('./pages/Scripts'));
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -45,6 +46,16 @@ function App() {
             element={
               <PrivateRoute
                 component={<Dashboard photo={bgPhoto} />}
+                restrictedTo="/login"
+                isLoggedIn={isLoggedIn}
+              />
+            }
+          />
+          <Route
+            path="/scripts"
+            element={
+              <PrivateRoute
+                component={<ScriptsPage photo={bgPhoto} />}
                 restrictedTo="/login"
                 isLoggedIn={isLoggedIn}
               />
