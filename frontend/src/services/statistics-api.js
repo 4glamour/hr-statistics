@@ -31,6 +31,10 @@ export const deleteRecord = id => {
 
 //auth
 
+export const setAuthHeader = token => {
+  axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+};
+
 export const logInUser = async credentials => {
   const res = await axios.post('/api/users/login', credentials);
 

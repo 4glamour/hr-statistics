@@ -86,6 +86,48 @@ export default function Dashboard() {
     );
   };
 
+  useEffect(() => {
+    // const MINUTES_5 = 300000;
+    // const MINUTES_10 = 600000;
+    const MINUTES_14 = 840000;
+
+    (function wakeUp() {
+      const time = new Date().toLocaleString();
+
+      console.log(
+        '\x1b[36m',
+        `${time} 
+		Отправляю запрос на сервер`
+      );
+
+      fetch('https://hr-statistics-ja95.onrender.com/api/records')
+        .then(_ => {
+          const sentTime = new Date().toLocaleString();
+
+          console.log(
+            '\x1b[32m',
+            `${sentTime} 
+		Запрос отправлен успешно`
+          );
+        })
+        .catch(e => {
+          const sentTime = new Date().toLocaleString();
+
+          console.log(
+            '\x1b[31m',
+            `${sentTime} 
+		Запрос не был отправлен`
+          );
+        });
+
+      setTimeout(wakeUp, MINUTES_14);
+    })();
+
+    return () => {
+      console.log('тут надо будет очищать setTimeout');
+    };
+  }, []);
+
   return (
     <Container>
       <AddCategoryForm addCategory={addCategory} />
