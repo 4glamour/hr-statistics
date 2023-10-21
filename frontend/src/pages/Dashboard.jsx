@@ -11,8 +11,9 @@ import {
   addRecord as addRecordToDb,
   addCategory as addCategoryToDb,
 } from '../services/statistics-api';
+import { PhotoBg } from '../components/PhotoBg/PhotoBg';
 
-export default function Dashboard() {
+export default function Dashboard({ photo }) {
   const [categories, setCategories] = useState([]);
   const [actionRecords, setActionRecords] = useState([]);
 
@@ -129,25 +130,31 @@ export default function Dashboard() {
   }, []);
 
   return (
-    <Container>
-      <AddCategoryForm addCategory={addCategory} />
-      <CallsSection
-        callsBtns={callsBtns}
-        addRecord={addRecord}
-        callsRecords={callsRecords}
-        updateBtnActiveStatus={updateBtnActiveStatus}
-      />
-      <MessagesSection
-        messagesBtns={messagesBtns}
-        addRecord={addRecord}
-        messagesRecords={messagesRecords}
-        updateBtnActiveStatus={updateBtnActiveStatus}
-      />
-      <RecordsSection
-        actionRecords={actionRecords}
-        deleteRecord={deleteRecord}
-        setActionRecords={setActionRecords}
-      />
-    </Container>
+    <>
+      <PhotoBg photo={photo}>
+        <Container>
+          <AddCategoryForm addCategory={addCategory} />
+          <CallsSection
+            callsBtns={callsBtns}
+            addRecord={addRecord}
+            callsRecords={callsRecords}
+            updateBtnActiveStatus={updateBtnActiveStatus}
+          />
+          <MessagesSection
+            messagesBtns={messagesBtns}
+            addRecord={addRecord}
+            messagesRecords={messagesRecords}
+            updateBtnActiveStatus={updateBtnActiveStatus}
+          />
+        </Container>
+      </PhotoBg>
+      <Container>
+        <RecordsSection
+          actionRecords={actionRecords}
+          deleteRecord={deleteRecord}
+          setActionRecords={setActionRecords}
+        />
+      </Container>
+    </>
   );
 }

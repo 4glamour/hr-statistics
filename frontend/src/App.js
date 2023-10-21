@@ -13,6 +13,7 @@ const LoginPage = lazy(() => import('./pages/Login'));
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [bgPhoto, setBgPhoto] = useState('');
 
   useEffect(() => {
     (async () => {
@@ -38,12 +39,12 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route path="/" element={<Layout setBgPhoto={setBgPhoto} />}>
           <Route
             index
             element={
               <PrivateRoute
-                component={<Dashboard />}
+                component={<Dashboard photo={bgPhoto} />}
                 restrictedTo="/login"
                 isLoggedIn={isLoggedIn}
               />
