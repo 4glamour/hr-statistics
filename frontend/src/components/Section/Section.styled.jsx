@@ -2,8 +2,6 @@ import styled from '@emotion/styled';
 
 export const PageSection = styled.section`
   padding: 12px 0;
-
-  border-bottom: 1px solid #e6e6fa;
 `;
 
 export const SectionTitle = styled.h2`
