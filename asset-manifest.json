@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/hr-statistics/static/css/main.3dc874eb.css",
-    "main.js": "/hr-statistics/static/js/main.5edcd2f7.js",
-    "static/js/808.83538226.chunk.js": "/hr-statistics/static/js/808.83538226.chunk.js",
+    "main.js": "/hr-statistics/static/js/main.b98b5a71.js",
+    "static/js/808.3b28618e.chunk.js": "/hr-statistics/static/js/808.3b28618e.chunk.js",
     "static/js/284.0d0543b8.chunk.js": "/hr-statistics/static/js/284.0d0543b8.chunk.js",
     "static/css/591.06b28eda.chunk.css": "/hr-statistics/static/css/591.06b28eda.chunk.css",
     "static/js/591.c21bb64c.chunk.js": "/hr-statistics/static/js/591.c21bb64c.chunk.js",
@@ -65,8 +65,8 @@
     "static/media/roboto-greek-ext-700-normal.woff": "/hr-statistics/static/media/roboto-greek-ext-700-normal.249853776d22a271b2b5.woff",
     "index.html": "/hr-statistics/index.html",
     "main.3dc874eb.css.map": "/hr-statistics/static/css/main.3dc874eb.css.map",
-    "main.5edcd2f7.js.map": "/hr-statistics/static/js/main.5edcd2f7.js.map",
-    "808.83538226.chunk.js.map": "/hr-statistics/static/js/808.83538226.chunk.js.map",
+    "main.b98b5a71.js.map": "/hr-statistics/static/js/main.b98b5a71.js.map",
+    "808.3b28618e.chunk.js.map": "/hr-statistics/static/js/808.3b28618e.chunk.js.map",
     "284.0d0543b8.chunk.js.map": "/hr-statistics/static/js/284.0d0543b8.chunk.js.map",
     "591.06b28eda.chunk.css.map": "/hr-statistics/static/css/591.06b28eda.chunk.css.map",
     "591.c21bb64c.chunk.js.map": "/hr-statistics/static/js/591.c21bb64c.chunk.js.map",
@@ -74,6 +74,6 @@
   },
   "entrypoints": [
     "static/css/main.3dc874eb.css",
-    "static/js/main.5edcd2f7.js"
+    "static/js/main.b98b5a71.js"
   ]
 }
